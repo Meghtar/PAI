@@ -11,7 +11,7 @@
         require_once('logopart.php');
     ?>
     <?php
-        require_once('login.php');
+        require_once('reset.php');
     ?>
     <div class="midline"></div>
 </div>

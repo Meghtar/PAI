@@ -80,7 +80,7 @@ body {
     filter: blur(3px);
 }
 
-.have-account {
+.have-account { /* TODO: change name (doesn't fit in login.php) */
     display: inherit;
     text-align: left;
     opacity: 1;
@@ -114,6 +114,7 @@ body {
     border-color: #383499;
     font-size: 1.5em;
     font-weight: bold;
+    margin-top: 10%;
 }
 
 .panel > .tmpname > form > input { /* TODO: add line below text */
@@ -158,6 +159,81 @@ body {
 
 .logo > img {
     margin-top: 0.4em;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .midline {
+        visibility: hidden;
+    }
+
+    .slogan {
+        visibility: hidden;
+    }
+
+    .cars-box {
+        visibility: hidden;
+    }
+
+    .split {
+        height: 100%;
+        width: 100%;
+        top: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .logopart { /* add arrow in mobile version */
+        background: unset;
+        background-color: #5F28CC;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 12%;
+        font-size: 0.6em;
+        white-space: nowrap;
+        padding-left: 115%; /* make it more responsive*/
+        padding-bottom: 6%;
+    }
+
+    .logo {
+        align-self: center;
+    }
+
+    .logo > img {
+        margin-top: 0.4em;
+        width: 35%;
+        height: auto;
+        flex: 1;
+        box-sizing: border-box;
+    }
+
+    .panel {
+        margin-top: 20%;
+        height: 90%;
+    }
+
+    .social > a {
+        box-sizing: content-box;
+        padding: 0 1em 0 1em;
+    }
+
+    .panel > .tmpname > form {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        align-self: center;
+    }
 }
 
 /* 
