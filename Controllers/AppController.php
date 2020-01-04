@@ -22,9 +22,6 @@ class AppController {
     {
         $templatePath = $template ? dirname(__DIR__).'/Views/'.get_class($this).'/'.$template.'.php' : '';
         $output = 'File not found';
-
-        print 'render \'' . $template . '\'</br>';
-        print 'path \'' . $templatePath . '\'</br>';
         
         if(file_exists($templatePath)) {
             extract($variables);

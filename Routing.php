@@ -31,12 +31,10 @@ class Routing {
 
     function run() {
         $page = isset($_GET['page']) && isset($this->routes[$_GET['page']]) ? $_GET['page'] : 'default';
-        echo $page;
         if($this->routes[$page]) {
             $className = $this->routes[$page]['controller'];
             $action = $this->routes[$page]['action'];
             $object = new $className;
-            var_dump($action);
             $object->$action();
         }
     }
