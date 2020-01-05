@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #2a2738;
+        fill-rule: evenodd;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="75" height="75"/>
+    </clipPath>
+  </defs>
+  <g id="Alert" class="cls-2">
+    <rect id="Rectangle_479" data-name="Rectangle 479" class="cls-1" width="16" height="16"/>
+    <path id="Path_1" data-name="Path 1" class="cls-3" d="M70.366,65.625H46.833a9.413,9.413,0,0,1-18.826,0H4.475A4.517,4.517,0,0,1,.239,62.344c-.471-1.875,0-4.219,1.412-5.156a18.846,18.846,0,0,0,7.53-15V28.125a28.239,28.239,0,0,1,56.478,0V42.188a18.846,18.846,0,0,0,7.53,15c1.412,1.406,2.353,3.281,1.412,5.156A4.517,4.517,0,0,1,70.366,65.625Z" transform="translate(-0.063)"/>
+  </g>
+</svg>

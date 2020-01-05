@@ -19,15 +19,14 @@
                 <input name="repeated_password" type="password" placeholder="Repeat password" id="password-input">
                 <button type="submit" class="btn btn-primary">REGISTER</button>
             </form>
-            </div>
-            <div class="have-account">
-                <a href="">Already have an account?</a>
-            </div>
-            <div class="social">
-                <a href=""><img src="../Public/img/Facebook.svg"></a>
-                <a href=""><img src="../Public/img/Twitter.svg"></a>
-                <a href=""><img src="../Public/img/Google plus.svg"></a>
-            </div>
+        </div>
+        <div class="have-account">
+            <a href="/?page=login">Already have an account?</a>
+        </div>
+        <div class="social">
+            <a href=""><img src="../Public/img/Facebook.svg"></a>
+            <a href=""><img src="../Public/img/Twitter.svg"></a>
+            <a href=""><img src="../Public/img/Google plus.svg"></a>
         </div>
     </div>
     <div class="midline"></div>

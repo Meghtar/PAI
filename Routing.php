@@ -1,5 +1,7 @@
 <?php
 require_once('Controllers/SecurityController.php');
+require_once('Controllers/FunctionalityController.php');
+require_once('Controllers/MiscController.php');
 
 class Routing {
     public $routes = [];
@@ -18,19 +20,34 @@ class Routing {
                 'controller' => 'SecurityController',
                 'action' => 'reset'
             ],
-            'default' => [
-                'controller' => 'SomethingWrongController',
-                'action' => 'error404' // TODO
+            'logout' => [
+                'controller' => 'SecurityController',
+                'action' => 'logout'
             ],
-            'login111' => [
-                'controller' => 'DefaultController',
-                'action' => 'login'
+            'board' => [
+                'controller' => 'FunctionalityController',
+                'action' => 'board'
+            ],
+            'welcome' => [
+                'controller' => 'MiscController',
+                'action' => 'welcome'
+            ],
+            'about' => [
+                'controller' => 'MiscController',
+                'action' => 'about'
+            ],
+            'not_found' => [
+                'controller' => 'MiscController',
+                'action' => 'not_found'
             ]
         ];
     }
 
     function run() {
-        $page = isset($_GET['page']) && isset($this->routes[$_GET['page']]) ? $_GET['page'] : 'default';
+        if(isset($_GET['page']) === false)
+            $page = 'welcome';
+        else
+            $page = isset($this->routes[$_GET['page']]) ? $_GET['page'] : 'not_found';
         if($this->routes[$page]) {
             $className = $this->routes[$page]['controller'];
             $action = $this->routes[$page]['action'];

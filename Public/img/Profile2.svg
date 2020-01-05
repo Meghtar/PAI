@@ -1,0 +1,15 @@
+<svg id="Profile" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2a2738;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_234" data-name="Ellipse 234" class="cls-1" cx="37.5" cy="37.5" r="37.5"/>
+  <path id="Union_44" data-name="Union 44" class="cls-2" d="M0,40V35c0-5.5,9-10,20-10s20,4.5,20,10v5ZM10,10A10,10,0,1,1,20,20,10,10,0,0,1,10,10Z" transform="translate(17.5 17.5)"/>
+</svg>

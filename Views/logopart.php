@@ -7,4 +7,4 @@
             <div class="car-solid-img"><img src="../Public/img/car-solid.svg"></div>
             <div class="car-crash-img"><img src="../Public/img/car-crash-solid.svg"></div>
         </div>
-</div>
+    </div>

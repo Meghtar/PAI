@@ -12,11 +12,10 @@
     ?>
     <div class="split panel">
         <div class="tmpname">
-            <form action="reset.php" method="POST">
-                <input name="name" type="text" placeholder="John Doe" id="name-input">
-                <h2>OR</h2>
-                <input name="email" type="text" placeholder="email@email.com" id="email-input">
-                <button type="submit" class="btn btn-primary">RESET PASSWORD</button>
+            <form action="/" method="GET">
+                <button type="submit" class="btn btn-primary" name="page" value="login">LOGIN</button>
+                <button type="submit" class="btn btn-primary" name="page" value="register">REGISTER</button>
+                <button type="submit" class="btn btn-primary" name="page" value="about">ABOUT</button>
             </form>
         </div>
         <div class="social">

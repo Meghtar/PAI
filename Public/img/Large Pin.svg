@@ -1,0 +1,15 @@
+<svg id="Large_Pin" data-name="Large Pin" xmlns="http://www.w3.org/2000/svg" width="94" height="94.021" viewBox="0 0 94 94.021">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_305" data-name="Rectangle 305" class="cls-1" width="94" height="94"/>
+  <path id="Path_114" data-name="Path 114" class="cls-2" d="M37.312,54.109A15.851,15.851,0,0,0,53.191,38.23c0-8.507-6.805-16.446-15.879-16.446A15.851,15.851,0,0,0,21.433,37.663C21.433,46.169,28.806,54.109,37.312,54.109Zm-26.654-43.1A37.695,37.695,0,1,1,63.966,64.317L37.312,90.971,10.658,64.317A38.723,38.723,0,0,1,10.658,11.009Z" transform="translate(3.975 3.05)"/>
+</svg>

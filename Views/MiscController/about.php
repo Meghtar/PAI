@@ -12,12 +12,8 @@
     ?>
     <div class="split panel">
         <div class="tmpname">
-            <form action="reset.php" method="POST">
-                <input name="name" type="text" placeholder="John Doe" id="name-input">
-                <h2>OR</h2>
-                <input name="email" type="text" placeholder="email@email.com" id="email-input">
-                <button type="submit" class="btn btn-primary">RESET PASSWORD</button>
-            </form>
+            <h1>About application</h1>
+            Work in progress
         </div>
         <div class="social">
             <a href=""><img src="../Public/img/Facebook.svg"></a>
