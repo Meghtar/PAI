@@ -8,12 +8,12 @@
 <body>
 <div class="functional">
     <?php
-        include(dirname(__DIR__).'/Common/navbar.php'); // TODO activate proper button
+        include(dirname(__DIR__).'/Common/navbar.php');
     ?>
     <?php
-        //include(dirname(__DIR__).'/Common/logofunc.php'); // TODO add file
+        include(dirname(__DIR__).'/Common/logofunc.php');
     ?>
-    
+    <!-- TODO: add responsive design, center logo -->
 </div>
 </body>
 </html>

@@ -1,5 +1,14 @@
-<div class="navbar"> <!-- TODO in php add separate button type for currently active buttons-->
-    <div class="navbutton menubutton">
+<div class="navbar"> <!-- TODO make it as list and use bootstrap --> 
+    <ul class="list-group">
+        <li class="list-group-item" href=""><img src="../../../Public/img/Menu.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/Large Pin.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/city-solid.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/Alert.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/Settings.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/Profile2.svg"/></li>
+        <li class="list-group-item" href=""><img src="../../../Public/img/question-solid.svg"/></li>
+    </ul>
+    <!--<div class="navbutton menubutton">
         <img src="../../../Public/img/Menu.svg"/>
     </div>
     <div class="navbutton map">
@@ -19,5 +28,5 @@
     </div>
     <div class="navbutton help">
         <img src="../../../Public/img/question-solid.svg"/>
-    </div>
+    </div>-->
 </div>
