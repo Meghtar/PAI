@@ -13,7 +13,7 @@
     ?>
     <div class="split panel">
         <div class="tmpname">
-            <form action="register.php" method="POST">
+            <form action="/?page=register" method="POST">
                 <input name="name" type="text" placeholder="John Doe" id="name-input">
                 <input name="email" type="text" placeholder="email@email.com" id="email-input">
                 <input name="password" type="password" placeholder="Input password" id="password-input">

@@ -1,0 +1,20 @@
+<svg width="75" height="94.021" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }</style>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="96.021" width="77" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect x="-4.34215" y="-2.015998" height="94" width="64" class="cls-1" id="Rectangle_305"/>
+  <path d="m37.288452,54.213268a15.851,15.851 0 0 0 15.878998,-15.879002c0,-8.507002 -6.804993,-16.446003 -15.878998,-16.446003a15.851,15.851 0 0 0 -15.878998,15.879002c0,8.506001 7.373001,16.446003 15.878998,16.446003zm-26.653999,-43.100005a37.695,37.695 0 1 1 53.308006,53.308002l-26.654007,26.653999l-26.653999,-26.653999a38.723,38.723 0 0 1 0,-53.308002z" class="cls-2" id="Path_114"/>
+ </g>
+</svg>

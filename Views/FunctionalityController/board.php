@@ -5,16 +5,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Board</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--<script src="../Public/js/scroll.js"></script>-->
 </head>
 <body>
 <div class="functional">
-    <?php
+    <?php // TODO: after clicking menu button more info should appear (js)
         include(dirname(__DIR__).'/Common/navbar.php');
     ?>
-    <?php
-        include(dirname(__DIR__).'/Common/logofunc.php');
-    ?>
-    <!-- TODO: add responsive design, center logo -->
+    <div class="mainpart">
+        <?php
+            include(dirname(__DIR__).'/Common/logofunc.php');
+        ?>
+        <div class="posts">
+            <div class="post">
+                post1
+            </div>
+            <div class="post">
+                post2
+            </div>
+            <div class="post">
+                post3
+            </div>
+            <div class="post">
+                post1
+            </div>
+            <div class="post">
+                post2
+            </div>
+            <div class="post">
+                post3
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
