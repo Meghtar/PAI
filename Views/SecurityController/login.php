@@ -19,6 +19,15 @@
                 <button type="submit" class="btn btn-primary">LOGIN</button>
             </form>
         </div>
+        <div class="messages">
+            <?php
+                if(isset($messages)){
+                    foreach($messages as $message) {
+                        echo $message;
+                    }
+                }
+            ?>
+        </div>
         <div class="have-account">
             <a href="/?page=reset">Cannot access your account?</a>
         </div>

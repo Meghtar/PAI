@@ -224,7 +224,9 @@ html, body {
 }
 
 .logofunc .logo {
-    scale: 70%;
+    transform: scale(0.7);
+    margin-top: -2%;
+    padding-bottom: 2%;
 }
 
 .navbutton {
@@ -266,9 +268,25 @@ html, body {
 }
 
 .post {
-    border-style: solid; /* TODO delete after making it*/
+    background: #F1F9FF 0% 0% no-repeat padding-box;
     height: 250px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.post_picture {
+    width: 250px;
+}
+
+.post_picture > img{
+    max-height: 100%;
+}
+
+.post_content {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    opacity: .4;
 }
 
 @media screen and (max-width: 700px) {
@@ -356,7 +374,7 @@ html, body {
     }
 
     .logofunc .logo {
-        scale: 40%;
+        transform: scale(0.4);
         white-space: nowrap;
         justify-self: center;
     }

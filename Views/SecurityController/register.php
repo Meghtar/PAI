@@ -21,6 +21,15 @@
                 <button type="submit" class="btn btn-primary">REGISTER</button>
             </form>
         </div>
+        <div class="messages">
+            <?php
+                if(isset($messages)){
+                    foreach($messages as $message) {
+                        echo $message;
+                    }
+                }
+            ?>
+        </div>
         <div class="have-account">
             <a href="/?page=login">Already have an account?</a>
         </div>

@@ -19,22 +19,69 @@
         ?>
         <div class="posts">
             <div class="post">
-                post1
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_upper">
+                        <div class="post_title_and_place">
+                            <div class="post_title">
+                                Title
+                            </div>
+                            <div class="post_place">
+                                place
+                            </div>
+                        </div>
+                        <div class="post_tags">
+                            <div class="post_tag"></div>
+                        </div>
+                    </div>
+                    <div class="post_middle">
+                        Proper text
+                    </div>
+                    <div class="post_bottom">
+                        <div class="post_social"> buttons </div>
+                        <div class="post_more"></div>
+                    </div>
+                </div>
             </div>
             <div class="post">
-                post2
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_text">
+                        Lorem ipsum
+                    </div>
+                </div>
             </div>
             <div class="post">
-                post3
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_text">
+                        Lorem ipsum
+                    </div>
+                </div>
             </div>
             <div class="post">
-                post1
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_text">
+                        Lorem ipsum
+                    </div>
+                </div>
             </div>
             <div class="post">
-                post2
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_text">
+                        Lorem ipsum
+                    </div>
+                </div>
             </div>
             <div class="post">
-                post3
+                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
+                <div class="post_content">
+                    <div class="post_text">
+                        Lorem ipsum
+                    </div>
+                </div>
             </div>
         </div>
     </div>
