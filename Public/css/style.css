@@ -267,8 +267,8 @@ html, body {
     padding: 20% 20% 20% 20%;
 }
 
-.post {
-    background: #F1F9FF 0% 0% no-repeat padding-box;
+.post { /* TODO: add proper opacity */
+    background: #C7B6DF 0% 0% no-repeat padding-box;
     height: 250px;
     margin-bottom: 20px;
     display: flex;
@@ -284,9 +284,61 @@ html, body {
 }
 
 .post_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: -moz-available;
     width: -webkit-fill-available;
-    opacity: .4;
+    padding-left: 10px;
+    color: #1D1B51;
+}
+
+.post_content .post_upper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 1em;
+}
+
+.post_title {
+    margin-bottom: 0.5em;
+    font-weight: 900;
+    font-size: larger;
+    letter-spacing: 0;
+}
+
+.post_place {
+    font-size: small;
+}
+
+.post_tags {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 5%;
+    top: 10%;
+}
+
+.post_tag {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BCE0FD;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.post_title_and_place {
+    margin-bottom: 1em;
+}
+
+.post_social {
+    position: absolute;
+    bottom: 25px;
+}
+
+.post_social img {
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 700px) {

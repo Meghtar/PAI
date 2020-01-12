@@ -24,67 +24,119 @@
                     <div class="post_upper">
                         <div class="post_title_and_place">
                             <div class="post_title">
-                                Title
+                                Example car accident
                             </div>
                             <div class="post_place">
-                                place
+                                Ul. Przykładowa 1, Kraków
                             </div>
                         </div>
                         <div class="post_tags">
-                            <div class="post_tag"></div>
+                            <div class="post_tag">jam</div>
+                            <div class="post_tag">car crash</div>
+                            <div class="post_tag">accident</div>
                         </div>
                     </div>
                     <div class="post_middle">
-                        Proper text
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel arcu nulla. Curabitur egestas faucibus nunc, id luctus massa mattis at. Morbi euismod tellus at arcu lobortis scelerisque. Sed at aliquet nisl. Integer eros purus, fringilla a lectus at, sollicitudin dapibus metus. Nunc vel consequat lorem, ut pulvinar arcu. 
                     </div>
-                    <div class="post_bottom">
-                        <div class="post_social"> buttons </div>
-                        <div class="post_more"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
-                <div class="post_content">
-                    <div class="post_text">
-                        Lorem ipsum
+                    <div class="post_social">
+                        <img src="../Public/img/Yes.svg"> 11 </img>
+                        <img src="../Public/img/No.svg"> 22 </img>
+                        <img src="../Public/img/comment-alt-solid.svg"> 33 </img>
+                        <img src="../Public/img/share-alt-square-solid.svg"> 44 </img>
                     </div>
                 </div>
             </div>
             <div class="post">
                 <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
                 <div class="post_content">
-                    <div class="post_text">
-                        Lorem ipsum
+                    <div class="post_upper">
+                        <div class="post_title_and_place">
+                            <div class="post_title">
+                                Example car accident
+                            </div>
+                            <div class="post_place">
+                                Ul. Przykładowa 1, Kraków
+                            </div>
+                        </div>
+                        <div class="post_tags">
+                            <div class="post_tag">jam</div>
+                            <div class="post_tag">car crash</div>
+                            <div class="post_tag">accident</div>
+                        </div>
+                    </div>
+                    <div class="post_middle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel arcu nulla. Curabitur egestas faucibus nunc, id luctus massa mattis at. Morbi euismod tellus at arcu lobortis scelerisque. Sed at aliquet nisl. Integer eros purus, fringilla a lectus at, sollicitudin dapibus metus. Nunc vel consequat lorem, ut pulvinar arcu. 
+                    </div>
+                    <div class="post_social">
+                        <img src="../Public/img/Yes.svg"> 11 </img>
+                        <img src="../Public/img/No.svg"> 22 </img>
+                        <img src="../Public/img/comment-alt-solid.svg"> 33 </img>
+                        <img src="../Public/img/share-alt-square-solid.svg"> 44 </img>
                     </div>
                 </div>
             </div>
             <div class="post">
                 <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
                 <div class="post_content">
-                    <div class="post_text">
-                        Lorem ipsum
+                    <div class="post_upper">
+                        <div class="post_title_and_place">
+                            <div class="post_title">
+                                Example car accident
+                            </div>
+                            <div class="post_place">
+                                Ul. Przykładowa 1, Kraków
+                            </div>
+                        </div>
+                        <div class="post_tags">
+                            <div class="post_tag">jam</div>
+                            <div class="post_tag">car crash</div>
+                            <div class="post_tag">accident</div>
+                        </div>
+                    </div>
+                    <div class="post_middle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel arcu nulla. Curabitur egestas faucibus nunc, id luctus massa mattis at. Morbi euismod tellus at arcu lobortis scelerisque. Sed at aliquet nisl. Integer eros purus, fringilla a lectus at, sollicitudin dapibus metus. Nunc vel consequat lorem, ut pulvinar arcu. 
+                    </div>
+                    <div class="post_social">
+                        <img src="../Public/img/Yes.svg"> 11 </img>
+                        <img src="../Public/img/No.svg"> 22 </img>
+                        <img src="../Public/img/comment-alt-solid.svg"> 33 </img>
+                        <img src="../Public/img/share-alt-square-solid.svg"> 44 </img>
                     </div>
                 </div>
             </div>
             <div class="post">
                 <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
                 <div class="post_content">
-                    <div class="post_text">
-                        Lorem ipsum
+                    <div class="post_upper">
+                        <div class="post_title_and_place">
+                            <div class="post_title">
+                                Example car accident
+                            </div>
+                            <div class="post_place">
+                                Ul. Przykładowa 1, Kraków
+                            </div>
+                        </div>
+                        <div class="post_tags">
+                            <div class="post_tag">jam</div>
+                            <div class="post_tag">car crash</div>
+                            <div class="post_tag">accident</div>
+                        </div>
+                    </div>
+                    <div class="post_middle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel arcu nulla. Curabitur egestas faucibus nunc, id luctus massa mattis at. Morbi euismod tellus at arcu lobortis scelerisque. Sed at aliquet nisl. Integer eros purus, fringilla a lectus at, sollicitudin dapibus metus. Nunc vel consequat lorem, ut pulvinar arcu. 
+                    </div>
+                    <div class="post_social">
+                        <img src="../Public/img/Yes.svg"> 11 </img>
+                        <img src="../Public/img/No.svg"> 22 </img>
+                        <img src="../Public/img/comment-alt-solid.svg"> 33 </img>
+                        <img src="../Public/img/share-alt-square-solid.svg"> 44 </img>
                     </div>
                 </div>
             </div>
-            <div class="post">
-                <div class="post_picture"><img src="../Public/img/bus_placeholder_post_graphics.png"></img></div>
-                <div class="post_content">
-                    <div class="post_text">
-                        Lorem ipsum
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
 </body>
-</html>
+</html> <!-- TODO: not responsive yet -->
