@@ -1,3 +1,11 @@
+<?php
+if(!isset($_SESSION['id']))
+{
+    $url = "http://$_SERVER[HTTP_HOST]/";
+    header("Location: {$url}?page=error");
+    return;
+}
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -6,6 +14,7 @@
     <title>Board</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/447f7e44ae.js" crossorigin="anonymous"></script>
     <!--<script src="../Public/js/scroll.js"></script>-->
 </head>
 <body>

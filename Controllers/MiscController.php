@@ -14,5 +14,9 @@ class MiscController extends AppController {
     {
         $this->render('not_found');
     }
+    public function error()
+    {
+        $this->render('error');
+    }
 }
 ?>

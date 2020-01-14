@@ -1,3 +1,7 @@
+:root {
+    --post_background: #ccd2cd59;
+}
+
 html, body {
     top: 0;
     left: 0;
@@ -221,11 +225,21 @@ html, body {
     padding-bottom: 5%;
     margin-bottom: 5%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.logofunc .fas {
+    font-size: 4em;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    color: white;
 }
 
 .logofunc .logo {
     transform: scale(0.7);
-    margin-top: -2%;
+    margin-top: -10px;
     padding-bottom: 2%;
 }
 
@@ -267,8 +281,8 @@ html, body {
     padding: 20% 20% 20% 20%;
 }
 
-.post { /* TODO: add proper opacity */
-    background: #C7B6DF 0% 0% no-repeat padding-box;
+.post {
+    background: var(--post_background) 0% 0% no-repeat padding-box;
     height: 250px;
     margin-bottom: 20px;
     display: flex;

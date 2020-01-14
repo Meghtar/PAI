@@ -6,7 +6,12 @@ require_once __DIR__.'/../Repository/UserRepository.php';
 class SecurityController extends AppController {
     public function login()
     {
-        //var_dump($_POST);
+        if(isset($_SESSION['id']))
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=board");
+            return;
+        }
         $userRepository = new UserRepository();
 
         if ($this->isPost()) {
@@ -35,6 +40,12 @@ class SecurityController extends AppController {
     }
     public function register()
     {
+        if(isset($_SESSION['id']))
+        {
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=board");
+            return;
+        }
         $userRepository = new UserRepository();
 
         if ($this->isPost()) {
@@ -77,6 +88,13 @@ class SecurityController extends AppController {
     public function reset()
     {
         $this->render('reset');
+    }
+    public function logout()
+    {
+        session_unset();
+        session_destroy();
+
+        $this->render('login', ['messages' => ['You have been successfully logged out!']]);
     }
 }
 ?>

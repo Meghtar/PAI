@@ -12,6 +12,10 @@ class Routing {
                 'controller' => 'SecurityController',
                 'action' => 'login'
             ],
+            'logout' => [
+                'controller' => 'SecurityController',
+                'action' => 'logout'
+            ],
             'register' => [
                 'controller' => 'SecurityController',
                 'action' => 'register'
@@ -19,10 +23,6 @@ class Routing {
             'reset' => [
                 'controller' => 'SecurityController',
                 'action' => 'reset'
-            ],
-            'logout' => [
-                'controller' => 'SecurityController',
-                'action' => 'logout'
             ],
             'board' => [
                 'controller' => 'FunctionalityController',
@@ -39,13 +39,19 @@ class Routing {
             'not_found' => [
                 'controller' => 'MiscController',
                 'action' => 'not_found'
+            ],
+            'error' => [
+                'controller' => 'MiscController',
+                'action' => 'error'
             ]
         ];
     }
 
     function run() {
         if(isset($_GET['page']) === false)
-            $page = 'welcome';
+            {
+                $page = 'welcome';
+            }
         else
             $page = isset($this->routes[$_GET['page']]) ? $_GET['page'] : 'not_found';
         if($this->routes[$page]) {
