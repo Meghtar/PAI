@@ -1,0 +1,124 @@
+.functional {
+    background: transparent linear-gradient(180deg, #5F28CC 0%, #7A82BF 86%, #584CC6 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    height: 100vh;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.mainpart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group {
+    padding: 1em 0em;
+    width: min-content;
+}
+
+.navbar li {
+    margin: 0 0 20% 0;
+}
+
+.navbar ul {
+    text-align: center;
+}
+
+.navbar {
+    background: #602BCB 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 7%;
+    height: 100%;
+    width: min-content;
+    display: flex;
+    position:fixed;
+    overflow: hidden;
+}
+
+.logofunc {
+    background: #602BCB 0% 0% no-repeat padding-box;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    color: white;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.logofunc .fas {
+    font-size: 4em;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    color: white;
+}
+
+.logofunc .logo {
+    transform: scale(0.7);
+    margin-top: -10px;
+    padding-bottom: 2%;
+}
+
+.navbutton {
+    background: #773CEF 0% 0% no-repeat padding-box;
+    background-size: contain;
+    border-radius: 4px;
+    opacity: 1;
+    background-position: center;
+    justify-content: flex-start;
+}
+
+.navbar .list-group-item {
+    background: #773CEF 0% 0% no-repeat padding-box;
+    padding: 0.3em 0.3em;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.navbar img {
+    padding: 7% 7% 7% 7%;
+    justify-content: center;
+    align-content: center;
+    height: 9.5vh;
+    width: auto;
+}
+
+.navbar .burger {
+    padding-left: 20%;
+}
+
+.navbar .list-group-item:hover {
+    opacity: 0.1;
+    background: #a285de 0% 0% no-repeat padding-box;
+}
+
+.menubutton {
+    padding: 20% 20% 20% 20%;
+}
+
+@media screen and (orientation:portrait) {
+    .functional .navbar {
+        display: none;
+    }
+
+    .logofunc .logo {
+        /*transform: scale(0.4);*/
+        white-space: nowrap;
+        justify-self: center;
+        align-self: auto;
+    }
+
+    .logofunc {
+        display: flex;
+        font-size: 60%;
+        max-height: 80px;
+    }
+}
