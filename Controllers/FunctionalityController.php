@@ -15,6 +15,31 @@ class FunctionalityController extends AppController {
         $this->render('board',  ['posts' => $posts]);
     }
 
+    public function map()
+    {
+        $this->render('map');
+    }
+
+    public function city()
+    {
+        $this->render('city');
+    }
+
+    public function settings()
+    {
+        $this->render('settings');
+    }
+
+    public function profile()
+    {
+        $this->render('profile');
+    }
+
+    public function about_logged()
+    {
+        $this->render('about_logged');
+    }
+
     public function add_post()
     {
         $this->render('add_post');

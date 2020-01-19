@@ -31,7 +31,7 @@
             </a>
         </li>
         <li class="list-group-item">
-            <a href="?page=about">
+            <a href="?page=about_logged">
                 <img src="../../../Public/img/question-solid.svg"/>
             </a>
         </li>

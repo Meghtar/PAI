@@ -1,7 +1,7 @@
 <?php
 require_once 'AppController.php';
 
-class MiscController extends AppController {
+class GuestController extends AppController {
     public function welcome()
     {
         $this->render('welcome');
