@@ -2,6 +2,7 @@
 require_once('Controllers/SecurityController.php');
 require_once('Controllers/FunctionalityController.php');
 require_once('Controllers/MiscController.php');
+require_once('Controllers/UploadController.php');
 
 class Routing {
     public $routes = [];
@@ -27,6 +28,14 @@ class Routing {
             'board' => [
                 'controller' => 'FunctionalityController',
                 'action' => 'board'
+            ],
+            'add_post' => [
+                'controller' => 'FunctionalityController',
+                'action' => 'add_post'
+            ],
+            'upload' => [
+                'controller' => 'UploadController',
+                'action' => 'add'
             ],
             'welcome' => [
                 'controller' => 'MiscController',

@@ -6,7 +6,7 @@ require_once __DIR__.'/../Repository/UserRepository.php';
 class SecurityController extends AppController {
     public function login()
     {
-        if(isset($_SESSION['id']))
+        if(isset($_SESSION['email']))
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}?page=board");
@@ -30,7 +30,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["email"] = $user->getEmail();
 
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}?page=board");
@@ -40,7 +40,7 @@ class SecurityController extends AppController {
     }
     public function register()
     {
-        if(isset($_SESSION['id']))
+        if(isset($_SESSION['email']))
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
             header("Location: {$url}?page=board");

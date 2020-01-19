@@ -104,7 +104,23 @@
     padding: 20% 20% 20% 20%;
 }
 
-@media screen and (orientation:portrait) {
+.plane {
+    display: flex;
+    justify-content: center;
+    background: var(--post_background);
+    width: 72%;
+    align-self: center;
+}
+
+.inputpanel > form {
+    width: 100%;
+}
+
+.inputpanel {
+    width: 100%;
+}
+
+@media screen and (max-device-aspect-ratio: 1/1) {
     .functional .navbar {
         display: none;
     }

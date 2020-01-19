@@ -18,15 +18,12 @@ class Database {
 
     public function connect()
     {
-
-        //echo 'Trying to connect: ' . $this->username . ' ' . $this->password . ' ' . $this->host . ' ' . $this->database . '<br>';
         try {
             $conn = new PDO(
                 "mysql:host=$this->host;dbname=$this->database", 
                 $this->username,
                 $this->password
             );
-            echo 'conn1<br>';
            
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -15,10 +15,10 @@
     <div class="split panel">
         <div class="inputpanel">
             <form action="/?page=register" method="POST">
-                <input name="name" type="text" placeholder="John Doe" id="name-input">
-                <input name="email" type="text" placeholder="email@email.com" id="email-input">
-                <input name="password" type="password" placeholder="Input password" id="password-input">
-                <input name="repeated_password" type="password" placeholder="Repeat password" id="password-input">
+                <input name="name" type="text" placeholder="John Doe" id="name-input" autocomplete="off">
+                <input name="email" type="text" placeholder="email@email.com" id="email-input" autocomplete="off">
+                <input name="password" type="password" placeholder="Input password" id="password-input" autocomplete="off">
+                <input name="repeated_password" type="password" placeholder="Repeat password" id="password-input" autocomplete="off">
                 <button type="submit" class="btn btn-primary">REGISTER</button>
             </form>
         </div>

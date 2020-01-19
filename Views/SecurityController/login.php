@@ -15,8 +15,8 @@
     <div class="split panel">
         <div class="inputpanel">
             <form action="/?page=login" method="POST">
-                <input name="email" type="text" placeholder="email@email.com" id="email-input">
-                <input name="password" type="password" placeholder="Input password" id="password-input">
+                <input name="email" type="text" placeholder="email@email.com" id="email-input" autocomplete="off">
+                <input name="password" type="password" placeholder="Input password" id="password-input" autocomplete="off">
                 <button type="submit" class="btn btn-primary">LOGIN</button>
             </form>
         </div>
