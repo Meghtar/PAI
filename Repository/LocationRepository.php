@@ -31,19 +31,42 @@ class LocationRepository extends Repository {
     public function addLocation($name, $gps, $visible=true): int
     {
         $last_id = $this->getLastId();
-        $stmt = $this->database->connect()->prepare('
-        INSERT INTO locations
-        (location_name, location_gps, location_visible) 
-        VALUES 
-        (:name, :gps, :visible)
-        ');
+        $pdo = $this->database->connect();
+        try {
+            $pdo->beginTransaction();
+            $stmt = $pdo->prepare('
+            INSERT INTO locations
+            (location_name, location_gps, location_visible) 
+            VALUES 
+            (:name, :gps, :visible)
+            ');
 
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':gps', $gps, PDO::PARAM_STR);
-        $stmt->bindParam(':visible', $visible, PDO::PARAM_INT);
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':gps', $gps, PDO::PARAM_STR);
+            $stmt->bindParam(':visible', $visible, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pdo->commit();
+
+            return $last_id + 1;
+        } catch(\Exception $e) {
+            $pdo->rollback();
+            throw $e;
+        }
+    }
+
+    public function getLocationNameById($id): string
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT location_name FROM locations WHERE location_id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        return $last_id + 1;
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $result['location_name'];
+        
+        return $result;
     }
 }
 

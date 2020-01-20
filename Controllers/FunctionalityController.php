@@ -10,8 +10,6 @@ class FunctionalityController extends AppController {
 
         $posts = $postRepository->getPosts(); // TODO: probably should load with AJAX
 
-        //var_dump($posts);
-        //die();
         $this->render('board',  ['posts' => $posts]);
     }
 

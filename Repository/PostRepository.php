@@ -33,28 +33,38 @@ class PostRepository extends Repository {
         return $result;
     }
 
-    public function addPost($title, $content, $localization, $city, $picture) {
-        $stmt = $this->database->connect()->prepare('
-        INSERT INTO posts
-        (post_id, user_id, post_title, post_localization, post_city, post_likes, post_dislikes, post_shares, post_comments, post_content, post_datetime, post_picture) 
-        VALUES 
-        (NULL, :user_id, :title, :localization, :city, 0, 0, 0, 0, :content, :dt, :picture)
-        ');
+    public function addPost($title, $content, $localization, $city, $picture) 
+    {
+        $pdo = $this->database->connect();
+        try {
+            $pdo->beginTransaction();
+            $stmt = $pdo->prepare('
+            INSERT INTO posts
+            (post_id, user_id, post_title, post_localization, post_city, post_likes, post_dislikes, post_shares, post_comments, post_content, post_datetime, post_picture) 
+            VALUES 
+            (NULL, :user_id, :title, :localization, :city, 0, 0, 0, 0, :content, :dt, :picture)
+            ');
 
-        $date = date("Y-m-d H:i:s", strtotime(date('Y-m-d H:i:s')));
+            $date = date("Y-m-d H:i:s", strtotime(date('Y-m-d H:i:s')));
 
-        $userRepository = new UserRepository();
+            $userRepository = new UserRepository();
 
-        $user_id = $userRepository->getUserByEmail($_SESSION['email'])->getId();
+            $user_id = $userRepository->getUserByEmail($_SESSION['email'])->getId();
 
-        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
-        $stmt->bindParam(':localization', $localization, PDO::PARAM_INT);
-        $stmt->bindParam(':city', $city, PDO::PARAM_INT);
-        $stmt->bindParam(':content', $content, PDO::PARAM_STR);
-        $stmt->bindParam(":dt", $date, PDO::PARAM_STR);
-        $stmt->bindParam(':picture', $picture, PDO::PARAM_LOB);
-        $stmt->execute();
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt->bindParam(':localization', $localization, PDO::PARAM_INT);
+            $stmt->bindParam(':city', $city, PDO::PARAM_INT);
+            $stmt->bindParam(':content', $content, PDO::PARAM_STR);
+            $stmt->bindParam(":dt", $date, PDO::PARAM_STR);
+            $stmt->bindParam(':picture', $picture, PDO::PARAM_LOB);
+            $stmt->execute();
+
+            $pdo->commit();
+        } catch(\Exception $e) {
+            $pdo->rollback();
+            throw $e;
+        }
     }
 
     public function getAllPostsFromLocalization($location): array {

@@ -74,20 +74,29 @@ class UserRepository extends Repository {
 
     public function addUser(string $email, string $name, string $password): ?User 
     {
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO users(email, name, password, default_city_id) VALUES (:email, :name, :password, 1)
-        ');
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-        $stmt->execute();
+        $pdo = $this->database->connect();
+        try {
+            $pdo->beginTransaction();
+            $stmt = $pdo->prepare('
+                INSERT INTO users(email, name, password, default_city_id) VALUES (:email, :name, :password, 1)
+            ');
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+            $stmt->execute();
 
-        return new User(
-            $email,
-            $name,
-            $password,
-            1
-        );
+            $pdo->commit();
+
+            return new User(
+                $email,
+                $name,
+                $password,
+                1
+            );
+        } catch(\Exception $e) {
+            $pdo->rollback();
+            throw $e;
+        }
     }
 }
 ?>

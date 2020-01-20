@@ -31,6 +31,20 @@ class CityRepository extends Repository {
         
         return $result;
     }
+
+    public function getCityNameById($id): string
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT city_name FROM cities WHERE city_id = :id
+        ');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $result['city_name'];
+        
+        return $result;
+    }
 }
 
 ?>

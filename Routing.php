@@ -3,6 +3,7 @@ require_once('Controllers/SecurityController.php');
 require_once('Controllers/FunctionalityController.php');
 require_once('Controllers/GuestController.php');
 require_once('Controllers/UploadController.php');
+require_once('Controllers/ReactionController.php');
 
 class Routing {
     public $routes = [];
@@ -58,6 +59,14 @@ class Routing {
                 'controller' => 'SecurityController',
                 'action' => 'reset'
             ],
+            'like' => [
+                'controller' => 'ReactionController',
+                'action' => 'like',
+            ],
+            'dislike' => [
+                'controller' => 'ReactionController',
+                'action' => 'dislike',
+            ],
             'welcome' => [
                 'controller' => 'GuestController',
                 'action' => 'welcome'
@@ -94,7 +103,10 @@ class Routing {
             $className = $this->routes[$page]['controller'];
             $action = $this->routes[$page]['action'];
             $object = new $className;
-            $object->$action();
+            if($action === 'like' || $action === 'dislike')
+                $object->$action($_POST['post_id']);
+            else
+                $object->$action();
         }
     }
 }

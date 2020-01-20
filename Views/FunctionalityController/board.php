@@ -5,6 +5,14 @@ if(!isset($_SESSION['email']))
     header("Location: {$url}?page=error");
     return;
 }
+
+require_once __DIR__.'/../../Repository/LocationRepository.php';
+require_once __DIR__.'/../../Repository/CityRepository.php';
+require_once __DIR__.'/../../Repository/ReactionRepository.php';
+
+$locationRepository = new LocationRepository();
+$cityRepository = new CityRepository();
+$reactionRepository = new ReactionRepository();
 ?>
 <!DOCTYPE html>
 <head>
@@ -17,7 +25,7 @@ if(!isset($_SESSION['email']))
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://kit.fontawesome.com/447f7e44ae.js" crossorigin="anonymous"></script>
-    <!--<script src="../Public/js/scroll.js"></script>-->
+    <script src="../../Public/js/reactions.js"></script>
 </head>
 <body>
 <div class="functional">
@@ -41,24 +49,19 @@ if(!isset($_SESSION['email']))
                                 </div>
                                 <div class="post_place">
                                     <?php
-                                        echo $post->getLocalization(); 
+                                        echo $locationRepository->getLocationNameById($post->getLocalization()); 
                                         echo ', ';
-                                        echo $post->getCity();
+                                        echo $cityRepository->getCityNameById($post->getCity());
                                     ?>
                                 </div>
-                            </div>
-                            <div class="post_tags">
-                                <div class="post_tag">jam</div>
-                                <div class="post_tag">car crash</div>
-                                <div class="post_tag">accident</div>
                             </div>
                         </div>
                         <div class="post_middle">
                         <?= $post->getContent();?>
                         </div>
                         <div class="post_social">
-                            <img src="../Public/img/Yes.svg"> <?= $post->getLikes();?> </img>
-                            <img src="../Public/img/No.svg"> <?= $post->getDislikes();?> </img>
+                            <img src="../Public/img/Yes.svg" onClick="like(<?= $post->getId(); ?>);"> <span id="likes<?= $post->getId();?>"><?= $reactionRepository->getPostLikes($post->getId());?> </span></img>
+                            <img src="../Public/img/No.svg" onClick="dislike(<?= $post->getId(); ?>);"> <span id="dislikes<?= $post->getId();?>"><?= $reactionRepository->getPostDislikes($post->getId());?> </span> </img>
                             <img src="../Public/img/comment-alt-solid.svg"> <?= $post->getCommentsAmount();?> </img>
                             <img src="../Public/img/share-alt-square-solid.svg"> <?= $post->getShares();?> </img>
                         </div>
