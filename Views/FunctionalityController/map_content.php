@@ -1,15 +1,46 @@
-<!--<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
-<div id="map" class="map"></div>
-<script src="../Public/js/map.js"></script>-->
+<?php
+    require_once __DIR__.'/../../Repository/PostRepository.php';
+    require_once __DIR__.'/../../Repository/UserRepository.php';
+    require_once __DIR__.'/../../Repository/CityRepository.php';
+    require_once __DIR__.'/../../Repository/LocationRepository.php';
 
-<div id="mapid" style=" height: 100%;">
+    $userRepository = new UserRepository();
+    $cityRepository = new CityRepository();
+    $postRepository = new PostRepository();
+    $locationRepository = new LocationRepository();
+
+    $city_id = $userRepository->getUserByEmail($_SESSION['email'])->getDefaultCity();
+    $location_id = $cityRepository->getLocationByCityId($city_id);
+
+    $location_gps = $locationRepository->getLocationGPSById($location_id);
+
+    $posts = $postRepository->getAllPostsFromCity($location_id);
+?>
+<div id="map">
     <script>
-        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'pk.eyJ1IjoibWVnaHRhciIsImEiOiJjazVsaGltNzAwbXZzM25vNGV1MWtvcmdtIn0.jkW9voRhWkHhryyT6C36Fg'
-        }).addTo(mymap);
+    var map = L.map("map").setView([<?= $location_gps ?>], 15);
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    map.on("contextmenu", function (event) {
+    console.log("user right-clicked on map coordinates: " + event.latlng.toString());
+    var url = '/?page=add_post';
+    var form = $('<form action="' + url + '" method="post">' +
+    '<input type="text" name="position" value="' + event.latlng + '" />' +
+    '</form>');
+    $('body').append(form);
+    form.submit();
+    });
+
+
+    <?php foreach($posts as $post) {
+
+    echo "
+            L.marker([".$locationRepository->getLocationGPSById($post->getLocalization())."]).addTo(map);
+         ";
+
+    } ?>
     </script>
 </div>

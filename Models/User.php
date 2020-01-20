@@ -5,17 +5,20 @@ class User {
     private $password;
     private $email;
     private $name;
+    private $defaultCity;
 
     public function __construct(
         string $email,
         string $name,
         string $password,
+        int $defaultCity,
         int $id = null
     ) {
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
         $this->id = $id;
+        $this->defaultCity = $defaultCity;
     }
 
     public function getId(): int
@@ -36,6 +39,11 @@ class User {
     public function getEmail(): string
     {
         return $this->email;
+    }
+
+    public function getDefaultCity(): int
+    {
+        return $this->defaultCity;
     }
 }
 ?>

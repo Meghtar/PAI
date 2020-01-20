@@ -18,8 +18,8 @@ class Post {
     public function __construct(
         int $id,
         string $title,
-        string $localization,
-        string $city,
+        int $localization,
+        int $city,
         int $likes,
         int $dislikes,
         int $shares,
@@ -46,12 +46,12 @@ class Post {
         return $this->title;
     }
 
-    public function getLocalization(): string
+    public function getLocalization(): int
     {
         return $this->localization;
     }
 
-    public function getCity(): string
+    public function getCity(): int
     {
         return $this->city;
     }

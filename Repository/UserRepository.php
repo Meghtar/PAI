@@ -23,6 +23,7 @@ class UserRepository extends Repository {
             $user['email'],
             $user['name'],
             $user['password'],
+            $user['default_city_id'],
             $user['user_id']
         );
     }
@@ -45,6 +46,7 @@ class UserRepository extends Repository {
             $user['email'],
             $user['name'],
             $user['password'],
+            $user['default_city_id'],
             $user['user_id']
         );
     }
@@ -62,6 +64,7 @@ class UserRepository extends Repository {
                 $user['email'],
                 $user['name'],
                 $user['password'],
+                $user['default_city_id'],
                 $user['user_id']
             );
         }
@@ -72,7 +75,7 @@ class UserRepository extends Repository {
     public function addUser(string $email, string $name, string $password): ?User 
     {
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users(email, name, password) VALUES (:email, :name, :password)
+            INSERT INTO users(email, name, password, default_city_id) VALUES (:email, :name, :password, 1)
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
@@ -86,7 +89,8 @@ class UserRepository extends Repository {
         return new User(
             $user['email'],
             $user['name'],
-            $user['password']
+            $user['password'],
+            $user['default_city_id']
         );
     }
 }

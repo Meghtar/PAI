@@ -5,6 +5,9 @@ if(!isset($_SESSION['email']))
     header("Location: {$url}?page=error");
     return;
 }
+
+$position = substr($_POST['position'],7, -1); // need to cut parentheses 
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -17,7 +20,6 @@ if(!isset($_SESSION['email']))
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="https://kit.fontawesome.com/447f7e44ae.js" crossorigin="anonymous"></script>
-    <!--<script src="../Public/js/scroll.js"></script>-->
 </head>
 <body>
 <div class="functional">
@@ -33,9 +35,10 @@ if(!isset($_SESSION['email']))
                 <form action="/?page=upload" method="POST" ENCTYPE="multipart/form-data">
                     <input name="title" type="text" placeholder="Title" autocomplete="off">
                     <input name="content" type="text" placeholder="Content" autocomplete="off">
-                    <input name="post_localization" type="text" placeholder="Localization" autocomplete="off">
+                    <input name="post_localization" type="text" placeholder="Location" autocomplete="off">
                     <input name="city" type="text" value="Kraków" autocomplete="off">
                     <input name="image" type="text" placeholder="input base64 file"> <!-- temporary -->
+                    <input name="position" type="hidden" value="<?= $position ?>">
                     <button type="submit" class="btn btn-primary">Submit post</button>
                 </form>
             </div>
