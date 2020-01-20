@@ -82,15 +82,11 @@ class UserRepository extends Repository {
         $stmt->bindParam(':password', $password, PDO::PARAM_STR);
         $stmt->execute();
 
-        if($user == false) {
-            return null;
-        }
-
         return new User(
-            $user['email'],
-            $user['name'],
-            $user['password'],
-            $user['default_city_id']
+            $email,
+            $name,
+            $password,
+            1
         );
     }
 }

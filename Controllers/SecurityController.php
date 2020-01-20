@@ -25,7 +25,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            if ($user->getPassword() !== $password) {
+            if (!password_verify($password, $user->getPassword())) {
                 $this->render('login', ['messages' => ['Wrong password!']]);
                 return;
             }
@@ -54,7 +54,7 @@ class SecurityController extends AppController {
             $password = $_POST['password'];
             $repeated_password = $_POST['repeated_password'];
 
-            if(strlen($password) < 1) {// TODO: make more restrictions 
+            if(strlen($password) < 5) {// TODO: make more restrictions
                 $this->render('register', ['messages' => ['Password is too weak!']]);
                 return;
             }
@@ -78,7 +78,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            $user = $userRepository->addUser($email, $name, $password);
+            $user = $userRepository->addUser($email, $name, password_hash($password, PASSWORD_DEFAULT));
 
             $this->render('login', ['messages' => ['You can log in now!']]);
             return;
