@@ -5,6 +5,17 @@ if(!isset($_SESSION['email']))
     header("Location: {$url}?page=error");
     return;
 }
+
+require_once __DIR__.'/../../Repository/UserRepository.php';
+require_once __DIR__.'/../../Repository/PostRepository.php';
+
+$userRepository = new UserRepository();
+$postRepository = new PostRepository();
+
+if($userRepository->getUserByEmail($_SESSION['email'])->getRole() !== 1)
+    die('You are not authorized');
+
+$post = $postRepository->getLastPost();
 ?>
 <!DOCTYPE html>
 <head>
@@ -28,18 +39,27 @@ if(!isset($_SESSION['email']))
             include(dirname(__DIR__).'/Common/logofunc.php');
         ?>
         <div class="plane">
-           <h1>About</h1>
-           <h3>
-           version 0.01
-           </h3>
-           <br>
-           <br>
-           <h3>
-           Contact:<br>
-           </h3>
-           <h3>
-           contact@trafficocity.com
-           </h3>
+
+            <table class="table mt-4 text-light">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Datetime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row"><?= $post->getId(); ?></th>
+                    <td><?= $post->getTitle(); ?></td>
+                    <td><?= $post->getContent(); ?></td>
+                    <td><?= $post->getDatetime(); ?></td>
+                    </tr>
+                </tbody>
+                <tbody class="posts-list">
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

@@ -24,6 +24,7 @@ class UserRepository extends Repository {
             $user['name'],
             $user['password'],
             $user['default_city_id'],
+            $user['role_id'],
             $user['user_id']
         );
     }
@@ -47,6 +48,7 @@ class UserRepository extends Repository {
             $user['name'],
             $user['password'],
             $user['default_city_id'],
+            $user['role_id'],
             $user['user_id']
         );
     }
@@ -65,6 +67,7 @@ class UserRepository extends Repository {
                 $user['name'],
                 $user['password'],
                 $user['default_city_id'],
+                $user['role_id'],
                 $user['user_id']
             );
         }
@@ -72,7 +75,7 @@ class UserRepository extends Repository {
         return $result;
     }
 
-    public function addUser(string $email, string $name, string $password): ?User 
+    public function addUser(string $email, string $name, string $password)
     {
         $pdo = $this->database->connect();
         try {
@@ -86,13 +89,6 @@ class UserRepository extends Repository {
             $stmt->execute();
 
             $pdo->commit();
-
-            return new User(
-                $email,
-                $name,
-                $password,
-                1
-            );
         } catch(\Exception $e) {
             $pdo->rollback();
             throw $e;

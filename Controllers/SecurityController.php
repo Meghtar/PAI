@@ -9,7 +9,7 @@ class SecurityController extends AppController {
         if(isset($_SESSION['email']))
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}?page=board");
+            header("Location: {$url}?page=profile");
             return;
         }
         $userRepository = new UserRepository();
@@ -43,7 +43,7 @@ class SecurityController extends AppController {
         if(isset($_SESSION['email']))
         {
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}?page=board");
+            header("Location: {$url}?page=profile");
             return;
         }
         $userRepository = new UserRepository();
@@ -78,7 +78,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            $user = $userRepository->addUser($email, $name, password_hash($password, PASSWORD_DEFAULT));
+            $userRepository->addUser($email, $name, password_hash($password, PASSWORD_DEFAULT));
 
             $this->render('login', ['messages' => ['You can log in now!']]);
             return;

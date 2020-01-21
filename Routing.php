@@ -39,6 +39,10 @@ class Routing {
                 'controller' => 'FunctionalityController',
                 'action' => 'about_logged'
             ],
+            'admin' => [
+                'controller' => 'FunctionalityController',
+                'action' => 'admin'
+            ],
             'upload' => [
                 'controller' => 'UploadController',
                 'action' => 'add'

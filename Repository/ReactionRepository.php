@@ -79,5 +79,33 @@ class ReactionRepository extends Repository {
         return $result;
     }
 
+    public function getUserLikes($user_id): int
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT COUNT(post_id) FROM user_likes WHERE user_id = :user_id
+        ');
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = (int) $result['COUNT(post_id)'];
+        
+        return $result;
+    }
+
+    public function getUserDislikes($user_id): int
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT COUNT(post_id) FROM user_dislikes WHERE user_id = :user_id
+        ');
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = (int) $result['COUNT(post_id)'];
+        
+        return $result;
+    }
+
 }
 ?>

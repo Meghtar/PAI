@@ -122,5 +122,42 @@ class PostRepository extends Repository {
 
         return $result;
     }
+
+    public function getLastPost() {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM posts ORDER BY post_datetime DESC LIMIT 1
+        ');
+        $stmt->execute();
+        $post = $stmt->fetchAll(PDO::FETCH_ASSOC)[0];
+        
+        $result = new Post(
+            $post['post_id'],
+            $post['post_title'],
+            $post['post_localization'],
+            $post['post_city'],
+            $post['post_likes'],
+            $post['post_dislikes'],
+            $post['post_shares'],
+            $post['post_content'],
+            $post['post_datetime'],
+            $post['post_comments'],
+            $post['post_picture']
+        );
+        return $result;
+    }
+
+    public function getNLastPostsButLast($amount) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM posts ORDER BY post_datetime DESC LIMIT 1,:amount
+        ');
+        $stmt->bindParam(':amount', $amount, PDO::PARAM_INT);
+        $stmt->execute();
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        //var_dump($posts);
+        //die();
+
+        return $posts;
+    }
 }
 ?>

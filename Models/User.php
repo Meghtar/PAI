@@ -6,12 +6,14 @@ class User {
     private $email;
     private $name;
     private $defaultCity;
+    private $role;
 
     public function __construct(
         string $email,
         string $name,
         string $password,
         int $defaultCity,
+        int $role,
         int $id = null
     ) {
         $this->email = $email;
@@ -19,7 +21,14 @@ class User {
         $this->name = $name;
         $this->id = $id;
         $this->defaultCity = $defaultCity;
+        $this->role = $role;
     }
+
+    public function getRole(): int
+    {
+        return $this->role;
+    }
+
 
     public function getId(): int
     {

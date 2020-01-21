@@ -38,7 +38,7 @@
     <?php foreach($posts as $post) {
 
     echo "
-            L.marker([".$locationRepository->getLocationGPSById($post->getLocalization())."]).addTo(map);
+            L.marker([".$locationRepository->getLocationGPSById($post->getLocalization())."]).addTo(map).bindPopup(\"".$post->getTitle()."\");
          ";
 
     } ?>

@@ -42,5 +42,10 @@ class FunctionalityController extends AppController {
     {
         $this->render('add_post');
     }
+
+    public function admin()
+    {
+        $this->render('admin');
+    }
 }
 ?>
