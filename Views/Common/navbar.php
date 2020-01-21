@@ -1,7 +1,11 @@
-<div class="navbar">
+<script src="../../Public/js/responsive.js"></script>
+<a href="javascript:void(0);" class="burgernav" onClick="burgerButton()">
+    <i class="fa fa-bars"></i>
+</a>
+<div class="navbar" id="mynav">
     <ul class="list-group">
         <li class="list-group-item">
-            <a href=""> <!-- this should expand the navbar?? -->
+            <a href="javascript:void(0);" onClick="burgerButton()">
                 <img src="../../../Public/img/Menu.svg"/>
             </a>
         </li>

@@ -20,6 +20,18 @@
     width: min-content;
 }
 
+.burgernav {
+    display: none;
+}
+
+.burgernav .fa-bars {
+    font-size: 2em;
+    left: 0.5em;
+    top: 10px;
+    position: absolute;
+    color: white;
+}
+
 .navbar li {
     margin: 0 0 20% 0;
 }
@@ -155,8 +167,18 @@
 }
 
 @media screen and (max-device-aspect-ratio: 1/1) {
+    .burgernav {
+        display: flex;
+    }
+
     .functional .navbar {
         display: none;
+        overflow: hidden;
+    }
+
+    .navbar.responsive {
+        display: flex;
+        position: absolute;
     }
 
     .logofunc .logo {

@@ -71,7 +71,7 @@ class Post {
         return $this->dislikes;
     }
 
-    public function getPicture(): string
+    public function getPicture(): ?string
     {
         return $this->picture;
     }
