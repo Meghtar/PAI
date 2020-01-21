@@ -1,7 +1,7 @@
 function like(post_id) {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8000/?page=like',
+        url: 'http://' + window.location.host + '/?page=like',
         data: { 
             'post_id': post_id,
     },
@@ -15,7 +15,7 @@ function like(post_id) {
 function dislike(post_id) {
     $.ajax({
         type: 'POST',
-        url: 'http://localhost:8000/?page=dislike',
+        url: 'http://' + window.location.host + '/?page=dislike',
         data: { 
             'post_id': post_id,
     },
