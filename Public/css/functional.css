@@ -179,6 +179,7 @@
     .navbar.responsive {
         display: flex;
         position: absolute;
+        z-index: 9999;
     }
 
     .logofunc .logo {

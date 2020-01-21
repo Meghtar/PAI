@@ -69,9 +69,9 @@ $reactionRepository = new ReactionRepository();
                 </div>
             <?php endforeach ?>
         </div>
-        <div class="post_add">
+        <!--<div class="post_add">
             <a href="/?page=add_post"><i class="far fa-plus-square"></i></a>
-        </div>
+        </div>-->
     </div>
 </div>
 </body>
